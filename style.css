@@ -11,14 +11,17 @@ header {
   text-align: center;
 }
 nav {
-  background-color: #34495e;
+  background-color: #425363;
   display: flex;
   justify-content: center;
-  padding: 10px 0;
+  padding: 40px 0;
+}
+nav {
+  font-size: 24px; /* Change this to any size you like */
 }
 nav a {
   color: white;
-  margin: 0 20px;
+  margin: 0 40px;
   text-decoration: none;
   font-weight: bold;
 }
