@@ -8,10 +8,10 @@
 <body>
     <!-- Social Links Top-Left -->
   <div id="social-links" style="position: absolute; top: 20px; left: 20px;">
-    <a href="https://www.linkedin.com/in/YOUR-USERNAME" target="_blank" style="margin-right: 10px;">
+    <a href="https://www.linkedin.com/in/damsara-jayarathne/" target="_blank" style="margin-right: 10px;">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" />
     </a>
-    <a href="https://github.com/DamsaraJayarathne" target="_blank">
+    <a href="https://github.com/DamsaraJay" target="_blank">
       <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" />
     </a>
   </div>
@@ -25,62 +25,171 @@
   <section>
   <h2>Projects</h2>
   <p>
-    These are some of the projects I took part in. Most of them were completed in my time at RPI
+    These are some of the projects I took part in. Most of them were completed in my time at RPI.
   </p>
   <section>
     <div style="margin-bottom: 40px;">
       <h3>Autonomous Helicopter Aerial Refueling</h3>
-      <img src="images/helicopter_project.jpg" alt="Helicopter Project" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
       <p>
-        Helicopter aerial refuling is a challenging borblem to solve because of the 
+        I developed the first <strong> autonomous control method for helicopter aerial refueling </strong>. 
+        The probe attached to the helicopter needs to dock on the drogue to accomplish sucessful aerial refuling.
       </p>
-      <div style="clear: both;"></div>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="images/HAAR_schematic.png" alt="Helicopter Project" width="500" style="border-radius: 10px;" />
+      </div>
+      I incoporated a data-driven reinforcement learning (RL) agent to make necessary corrections to the outer-loop as shown below. 
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+      <img src="images/Control_schematic.png" alt="Helicopter Project" width="500" style="border-radius: 10px;" />
+      </div>
+      Using this new control system, I demonstrated that the proposed controller outperforms general inner-outer control architecture.
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="images/synchronized_animation.gif" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+
+      <div> <strong>Highlights</strong>
+      <li>
+        Developed an <strong>end-to-end GNC architecture</strong> for the maneuver which involved a <i> UH-60 Blackhawk </i> helicopter model and <i> Navair </i> drogue model.
+      </li>
+      <li>
+        Trained the RL agent in a simplifed environemnt with 90% time reduction.
+      </li>
+      <li>
+        Improved safety through safe-RL algorithm.
+      </li>
+      <li>
+        Improved accurasy of 45% over convensional inner-outer control method.
+      </li>
+      <li>
+        Developed a nonlinear model predictive controller for real-time trajectory trakcing.
+      </li>
+      <li>
+        Validated the controller wind turbulence and bow-wave effect.
+      </li>
+      </div>
+
     </div>
-  
+
     <div style="margin-bottom: 40px;">
-      <h3>Interactive Optimization for Human-in-the-Loop Control</h3>
-      <img src="images/human_loop.jpg" alt="Interactive Optimization" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
+      <h3>Development of a Quadrotor for autolanding</h3>
+      <img src="images/tailsitter.jpg" alt="Tailsitter" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
       <p>
         Implemented real-time <strong>MPC</strong> with GPS and visual feedback using <strong>CasADi</strong>.
       </p>
+    <div> <strong>Highlights</strong>
+      <li>
+        Pixhawk as flight controller equipped with GPS.
+      </li>
+      <li>
+        Raspberry Pi 4B as the flight computer that takes camera input through Pi camera.
+      </li>
+      <li>
+        Camera processes aruco marker feed and generates the optimal trajectory using CasADi.
+      </li>
+      <li>
+        Developed an <strong>end-to-end</strong> algorithm in <a href="https://github.com/DamsaraJay/Autonomous-quadrotor-landing"><strong>Python</strong></a>.
+      </li>
       <div style="clear: both;"></div>
     </div>
-  
+    <br><br>
+    <div>
+      Then, our team developed the aircraft into a <strong>Quadrotor Biplane Tailsitter</strong> by integrating two parallel Eppler 221 wings.
+    </div>
+    <div style="clear: both; text-align: center; margin-top: 20px;">
+    <img src="images/QRBP.gif" alt="Helicopter Project" width="500" style="border-radius: 10px;" />
+    </div>
+
+
     <div style="margin-bottom: 40px;">
-      <h3>Development of a Quadrotor Biplane Tailsitter</h3>
-      <img src="images/tailsitter.jpg" alt="Tailsitter" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
+      <h3>Interactive Optimization for Human-in-the-Loop Control</h3>
       <p>
-        Built a user-guided optimization system blending formal logic and human feedback.
+        Interactive optimization combines the power of algorithms with human insight. 
+        Most past work either asks users the same type of question over and over or requires them to tweak the model manually—both limiting how much useful knowledge gets included and often needing expert-level skills. 
+        To fix this, we created a new framework that lets users answer different types of questions, which we then use to build a smarter, more accurate optimization model (SM-MILP). The algorithm is shown below.
       </p>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="images/OveralMethod.png" alt="Docking Demo" width="800" style="border-radius: 1px;" />
+      </div>
+      <p>
+        This model aims to suggest designs the user is happy with. Furthermore, it asks targeted questions to gather key info and reduce uncertainty using a CVaR approach. 
+        In tests on a supplier selection problem, our method closed the gap between model and reality, reached better solutions faster, and gave tighter confidence intervals.
+      </p>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="images/Interactive_optimization_1.png" alt="Docking Demo" width="600" style="border-radius: 10px;" />
+      </div>
+      As shown in the above figure, this interactive optimization method allows us to reach the ground truth within a fnite number of human-interactions.
       <div style="clear: both;"></div>
     </div>
+
+
+  
   
     <div style="margin-bottom: 40px;">
       <h3>Controlling a Moving Bed with Synchronized 2D Motion</h3>
-      <img src="images/moving_bed.jpg" alt="Moving Bed" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
+      <img src="images/SelfArray.jpg" alt="Moving Bed" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
       <p>
-        Built a user-guided optimization system blending formal logic and human feedback.
-      </p>
-      <div style="clear: both;"></div>
-    </div>
-  
-    <div style="margin-bottom: 40px;">
-      <h3>Formula SAE 2018 — United Kingdom</h3>
-      <img src="images/formula_sae.jpg" alt="Formula SAE" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
-      <p>
-        Worked on dynamics, controls, or integration tasks as part of a competitive racing team.
+        This project was about synchronizing the movement of two motors to enable precise 2D stretching, a crucial process for manufacturing flexible LED panels. 
+        I constructed the electronic setup by assembling motors, power supply, controllers etc. 
+        Then, the off-the-shelf controller was programmed to achive synchronous control using the leader-follower architecture.
       </p>
       <div style="clear: both;"></div>
     </div>
   
     <div style="margin-bottom: 40px;">
       <h3>Mobile Robots for Cooperative Object Handling</h3>
-      <img src="images/mobile_robots.jpg" alt="Mobile Robots" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
-      <p>
-        Built a user-guided optimization system blending formal logic and human feedback.
-      </p>
+      
+    <p>
+      Design and developed a team of mobile robot that can carry a long rigid beam in a cluttered environment collaboratively using leader-follower architecture. The control algorithm only utilized the position and velocity of the robots to maintain the cooperative behaviour. 
+    </p>
       <div style="clear: both;"></div>
     </div>
+    <div> <strong>Highlights</strong>
+      <li>
+        Lidar scanner for localization and identifying obstacles.
+      </li>
+      <li>
+        Arucomarker to identify the positiona of the follower.
+      </li>
+      <li>
+        RRT algorithm to generate the optimal trajectory to avoid obstables and reach the target in MATLAB.
+      </li>
+      <li>
+        In house developed embedded controller in C++.
+      </li>
+      <div style="clear: both;"></div>
+    </div> 
+
+    <div style="margin-bottom: 40px;">
+      <h3>Formula SAE 2018 - United Kingdom</h3>
+      <p>
+      Formula SAE is an educational motorsport competition. We participated in the 2018 competition held at Silverstone, UK, representing my home country Sri Lanka. 
+      We ranked <strong>33rd</strong> out of 120 teams from around the world and <strong>2nd</strong> in Asian region.       
+      </p>
+    </div>
+      <div style="display: flex; gap: 10px;">
+        <img src="images/TSR/Car.jpg" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+        <img src="images/TSR/TeamPhotot.jpg" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+    <div>
+      <li>
+        Developed the steering system that involved mathematical modelling of the entire system to find the optimal steering angles using MATLAB.
+      </li>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="images/TSR/SteeringSystem.JPG" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+      <li>
+        Conducted numerical simulations to veryfy the performance of the steering system using software tools such as SOLIDWORKS and Ansys.
+      </li>
+      <li>
+        Designed, analyzed, tested and manufactured carboon fiber components such as steering wheel, plenum and vehicle body.
+      </li>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="images/TSR/SteeringWheel.jpg" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+      <li>
+        Manufactured metal components through conventional machining techniques.
+      </li>
+    </div>   
+    
   </section>
       
   </section>
