@@ -103,6 +103,295 @@
     <img src="QRBP.gif" alt="Helicopter Project" width="800" style="border-radius: 10px;" />
     </div>
 
+
+    <div style="margin-bottom: 40px;">
+      <h3>MPC-based Trajectory Tracking for Autonomous Cars</h3>
+      <p>
+        Developed a nonlinear <strong>Model Predictive Controller</strong> for high-performance trajectory tracking of an
+        autonomous race car in the <strong>BeamNG</strong> simulation environment. The vehicle is represented by a
+        nonlinear bicycle model with <strong>Fiala</strong> tire dynamics, while the engine torque and its inverse
+        (throttle) map are learned from simulation data using neural networks. The MPC is formulated in the
+        <strong>Frenet frame</strong> over a spatial horizon and solved with <strong>CasADi/IPOPT</strong> on a
+        millisecond time scale, tracking time-optimal race lines under both mild and aggressive driving profiles.
+      </p>
+    <div> <strong>Highlights</strong>
+      <li>
+        Identified Fiala pure- and combined-slip tire parameters from collected vehicle data.
+      </li>
+      <li>
+        Trained forward and inverse engine torque neural networks to map throttle to wheel torque.
+      </li>
+      <li>
+        Generated time-optimal race line trajectories for "mild" and "aggressive" driving levels.
+      </li>
+      <li>
+        Achieved sub-metre lateral tracking error with real-time solve times.
+      </li>
+      <div style="clear: both;"></div>
+    </div>
+      <div style="display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 20px;">
+        <video height="320" controls style="border-radius: 10px;">
+          <source src="MPC_car.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <video height="320" controls style="border-radius: 10px;">
+          <source src="MPC_data.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+
+    <div style="margin-bottom: 40px;">
+      <h3> Developing a framework for navigation in an unstructured environment </h3>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+       <img src="Nav1.png" alt="nav1" width="800" style="border-radius: 10px;" />
+      </div>
+     
+      <p>
+        Currently developing an ML-driven framework to generate a feasible path to navigate in unstructured environments (such as forests). 
+        Only using the camera feed, the system is able to identify obstacles and avoid them while navigating through the environment.
+      </p>
+    <div> <strong>Highlights</strong>
+      <li>
+        The training images are obtained in an Unreal-Engine environment utilizing AirSim. Segmented images identify the obstacles (such as trees) and obstacle-free spaces (such as grasslands). 
+        Furthermore, depth camera images are employed to extract the depth information. 
+      </li>
+      <li>
+        These segmented images and depth images are combined to create a 2D occupancy grid.
+      </li>
+      <li>
+        A neural network is trained to estimate the 2D occupancy grid using raw camera images, which facilitates local navigation. 
+      </li>
+      <li>
+        As shown below, raw camera images are processed to create an occupancy grid that contains local information about the obstacles. 
+        This information is then passed into an online planner for trajectory generation, which is tracked by a controller.
+      </li>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+      <img src="Nav2.png" alt="Estimating 2D occupancy using raw camera images" width="500" style="border-radius: 10px;" />
+      </div>      
+      
+      <div style="clear: both;"></div>
+    </div>
+      
+    <div style="margin-bottom: 40px;">
+      <h3>Interactive Optimization for Human-in-the-Loop Control</h3>
+      <p>
+        Interactive optimization combines the power of algorithms with human insight. 
+        Most past work either asks users the same type of question over and over or requires them to tweak the model manually—both limiting how much useful knowledge gets included and often needing expert-level skills. 
+        To fix this, we created a new framework that lets users answer different types of questions, which we then use to build a smarter, more accurate optimization model (SM-MILP). The algorithm is shown below.
+      </p>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="OveralMethod.png" alt="Docking Demo" width="800" style="border-radius: 1px;" />
+      </div>
+      <p>
+        This model aims to suggest designs the user is happy with. Furthermore, it asks targeted questions to gather key info and reduce uncertainty using a CVaR approach. 
+        In tests on a supplier selection problem, our method closed the gap between model and reality, reached better solutions faster, and gave tighter confidence intervals.
+      </p>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="Interactive_optimization_1.png" alt="Docking Demo" width="600" style="border-radius: 10px;" />
+      </div>
+      As shown in the above figure, this interactive optimization method allows us to reach the ground truth within a finite number of human interactions.
+      <div style="clear: both;"></div>
+    </div>
+
+
+  
+  
+    <div style="margin-bottom: 40px;">
+      <h3>Controlling a Moving Bed with Synchronized 2D Motion</h3>
+      <img src="SelfArray.jpg" alt="Moving Bed" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
+      <p>
+        This project was about synchronizing the movement of two motors to enable precise 2D stretching, a crucial process for manufacturing flexible LED panels. 
+        I constructed the electronic setup by assembling motors, power supply, controllers, etc. 
+        Then, the off-the-shelf controller was programmed to achieve synchronous control using the leader-follower architecture.
+      </p>
+      <div style="clear: both;"></div>
+    </div>
+  
+    <div style="margin-bottom: 40px;">
+      <h3>Mobile Robots for Cooperative Object Handling</h3>
+      
+    <p>
+      Design and developed a team of mobile robot that can carry a long rigid beam in a cluttered environment collaboratively using leader-follower architecture. The control algorithm only utilized the position and velocity of the robots to maintain the cooperative behaviour. 
+    </p>
+      <div style="clear: both;"></div>
+    </div>
+    <div> <strong>Highlights</strong>
+      <li>
+        Lidar scanner for localization and identifying obstacles.
+      </li>
+      <li>
+        Arucomarker to identify the position of the follower.
+      </li>
+      <li>
+        RRT algorithm to generate the optimal trajectory to avoid obstacles and reach the target in MATLAB.
+      </li>
+      <li>
+        In-house developed embedded controller in C++.
+      </li>
+      <div style="clear: both;"></div>
+    </div> 
+  <div style="clear: both; text-align: center; margin-top: 20px;">
+    <video width="600" controls style="border-radius: 10px;">
+      <source src="CooperativeRobots.webm" type="video/webm">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+    <div style="margin-bottom: 40px;">
+      <h3>Formula SAE 2018 - United Kingdom</h3>
+      <p>
+      Formula SAE is an educational motorsport competition. We participated in the 2018 competition held at Silverstone, UK, representing my home country Sri Lanka. 
+      We ranked <strong>33rd</strong> out of 120 teams from around the world and <strong>2nd</strong> in the Asian region.       
+      </p>
+    </div>
+      <div style="display: flex; gap: 10px;">
+        <img src="Car.jpg" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+        <img src="TeamPhotot.jpg" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+    <br><br>
+    <div>
+      <li>
+        Developed the steering system that involved mathematical modeling of the entire system to find the optimal steering angles using MATLAB.
+      </li>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="SteeringSystem.JPG" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+      <li>
+        Conducted numerical simulations to verify the performance of the steering system using software tools such as SOLIDWORKS and Ansys.
+      </li>
+      <li>
+        Designed, analyzed, tested, and manufactured carbon fiber components such as the  steering wheel, plenum, and vehicle body.
+      </li>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="SteeringWheel.jpg" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+      <li>
+        Manufactured metal components through conventional machining techniques.
+      </li>
+    </div>   
+    
+  </section>
+      
+  </section>
+
+  <footer>
+    &copy; 2025 Damsara Jayarathne
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects - Damsara Jayarathne</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Social Links Top-Left -->
+  <div id="social-links" style="position: absolute; top: 20px; left: 20px;">
+    <a href="https://www.linkedin.com/in/damsara-jayarathne/" target="_blank" style="margin-right: 10px;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" />
+    </a>
+    <a href="https://github.com/DamsaraJay" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" />
+    </a>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="publications.html">Publications</a>
+  </nav>
+
+  <section>
+  <h2>Projects</h2>
+  <p>
+    These are some of the projects I took part in. Most of them were completed in my time at RPI.
+  </p>
+  <section>
+    <div style="margin-bottom: 40px;">
+      <h3>Autonomous Helicopter Aerial Refueling</h3>
+      <p>
+        I developed the first <strong> autonomous control method for helicopter aerial refueling </strong>. 
+        The probe attached to the helicopter needs to dock on the drogue to accomplish successful aerial refueling.
+      </p>
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="HAAR_schematic.png" alt="Helicopter Project" width="500" style="border-radius: 10px;" />
+      </div>
+      As shown below, I incorporated a data-driven reinforcement learning (RL) agent to make necessary corrections to the outer loop. 
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+      <img src="Control_schematic.png" alt="Helicopter Project" width="500" style="border-radius: 10px;" />
+      </div>
+      Using this new control system, I demonstrated that the proposed controller outperforms the general inner-outer control architecture.
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="synchronized_animation.gif" alt="Docking Demo" width="400" style="border-radius: 10px;" />
+      </div>
+      The simulation below highlights that the proposed controller is able to guide the probe into the drogue, maintaining stability.
+      <div style="clear: both; text-align: center; margin-top: 20px;">
+        <img src="Refueling_Animation.gif" alt="Helicopter autonomous aerial refueling" width="800" style="border-radius: 10px;" />
+      </div>
+      <p>
+      </p>
+      <div> <strong>Highlights</strong>
+      <li>
+        Developed an <strong>end-to-end GNC architecture</strong> for the maneuver, which involved a <i> UH-60 Blackhawk </i> helicopter model and <i> Navair </i> drogue model.
+      </li>
+      <li>
+        Trained the RL agent in a simplified environment with a 90% time reduction.
+      </li>
+      <li>
+        Improved safety through a safe-RL algorithm.
+      </li>
+      <li>
+        Improved accuracy of 45% over the conventional inner-outer control method.
+      </li>
+      <li>
+        Developed a nonlinear model predictive controller for real-time trajectory tracking.
+      </li>
+      <li>
+        Validated the controller wind turbulence and bow-wave effect.
+      </li>
+      </div>
+
+    </div>
+
+    <div style="margin-bottom: 40px;">
+      <h3>Development of a Quadrotor for autolanding</h3>
+      <img src="tailsitter.jpg" alt="Tailsitter" width="300" style="float: right; margin-left: 20px; border-radius: 10px;" />
+      <p>
+        Implemented real-time <strong>MPC</strong> with GPS and visual feedback using <strong>CasADi</strong>.
+      </p>
+    <div> <strong>Highlights</strong>
+      <li>
+        Pixhawk as the flight controller equipped with GPS.
+      </li>
+      <li>
+        Raspberry Pi 4B is the flight computer that takes camera input through the Pi camera.
+      </li>
+      <li>
+        The camera processes the Aruco marker feed and generates the optimal trajectory using CasADi.
+      </li>
+      <li>
+        Developed an <strong>end-to-end</strong> algorithm in <a href="https://github.com/DamsaraJay/Autonomous-quadrotor-landing"><strong>Python</strong></a>.
+      </li>
+      <div style="clear: both;"></div>
+    </div>
+    <br><br>
+    <div>
+      Then, our team developed the aircraft into a <strong>Quadrotor Biplane Tailsitter</strong> by integrating two parallel Eppler 221 wings.
+    </div>
+    <div style="clear: both; text-align: center; margin-top: 20px;">
+    <img src="QRBP.gif" alt="Helicopter Project" width="800" style="border-radius: 10px;" />
+    </div>
+
     <div style="margin-bottom: 40px;">
       <h3> Developing a framework for navigation in an unstructured environment </h3>
       <div style="clear: both; text-align: center; margin-top: 20px;">
