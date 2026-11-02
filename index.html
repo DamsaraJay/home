@@ -1,75 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Home</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    .intro {
-      font-size: 1.5em; /* Increase font size */
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    .flex-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .text-container {
-      flex: 1 1 60%;
-      min-width: 280px;
-    }
-
-    .profile-photo {
-      width: 200px;
-      border-radius: 12px;
-      flex-shrink: 0;
-    }
-  </style>
-</head>
-<body>
-      <!-- Social Links Top-Left -->
-  <div id="social-links" style="position: absolute; top: 20px; left: 20px;">
-    <a href="https://www.linkedin.com/in/damsara-jayarathne/" target="_blank" style="margin-right: 10px;">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" />
-    </a>
-    <a href="https://github.com/DamsaraJay" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" />
-    </a>
-  </div>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="publications.html">Publications</a>
-  </nav>
-
-  <section>
-    <h2>Welcome</h2>
-    <div class="flex-container">
-      <div class="text-container">
-        <p class="intro">
-          I'm Damsara, a PhD student in Mechanical Engineering at Rensselaer Polytechnic Institute (RPI), NY, USA. I specialize in GNC systems and integrating model-based control with Machine Learning and Reinforcement Learning for aerial systems.
-          Broadly, my interests lie in autonomous systems, machine learning, and predictive control. 
-
-        </p>
-        <p class="intro">
-          <strong>Education:</strong><br />
-          PhD in Mechanical Engineering, RPI (2026)<br />
-          BSc in Mechanical Engineering, University of Moratuwa (2018) 
-        </p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="publications.html">Publications</a>
+        </nav>
+        <div id="social-links" class="social-links">
+          <a href="https://www.linkedin.com/in/damsara-jayarathne/" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" width="30" />
+          </a>
+          <a href="https://github.com/DamsaraJay" target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="30" />
+          </a>
+        </div>
       </div>
-      <img src="myPhoto.jpeg" alt="Damsara Jayarathne" width="300" height="auto" class="profile-photo" />
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2025 Damsara Jayarathne · Hosted on GitHub Pages
-  </footer>
-</body>
+    </header>
+    <main class="home-main">
+      <div class="container home-grid">
+        <div class="home-copy">
+          <h1>Welcome</h1>
+          <p class="intro"><strong>I'm Damsara</strong>, a PhD student in Mechanical Engineering at Rensselaer Polytechnic Institute (RPI), NY, USA. I specialize in GNC systems and integrating model-based control with Machine Learning and Reinforcement Learning for aerial systems. Broadly, my interests lie in autonomous systems, machine learning, and predictive control.</p>
+          <section class="education" aria-labelledby="education-heading">
+            <h2 id="education-heading">Education:</h2>
+            <ul>
+              <li>PhD in Mechanical Engineering, RPI (2026)</li>
+              <li>BSc in Mechanical Engineering, University of Moratuwa (2018)</li>
+            </ul>
+          </section>
+        </div>
+        <figure class="portrait">
+          <img src="myPhoto.jpeg" alt="Damsara Jayarathne" class="profile-photo" fetchpriority="high" width="1200" height="1599" />
+        </figure>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-inner">&copy; 2025 Damsara Jayarathne · Hosted on GitHub Pages</div>
+    </footer>
+  </body>
 </html>
-
